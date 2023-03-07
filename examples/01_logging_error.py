@@ -1,9 +1,7 @@
-import sys
-sys.append("..")
-
-from src.exception import CustomException
 import logging
 import sys
+sys.append("..")
+from src.exception import CustomException
 
 if __name__=="__main__":
     try :

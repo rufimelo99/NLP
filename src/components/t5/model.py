@@ -11,7 +11,8 @@ class t5:
         self.tokenizer = T5Tokenizer.from_pretrained(model_name)
         self.model = T5ForConditionalGeneration.from_pretrained(model_name)
 
-    def encode_data_for_training_task(self, input_sequences, output_sequences, task_prefix = "Summarize: ",max_source_length = 512*10, max_target_length = 1024):
+    def encode_data_for_training_task(self, input_sequences, output_sequences, task_prefix = "Summarize: ",
+                                      max_source_length = 512*10, max_target_length = 1024):
         encoding = self.tokenizer(
             [task_prefix + sequence for sequence in input_sequences],
             padding="longest",

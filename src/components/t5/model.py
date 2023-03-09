@@ -37,10 +37,10 @@ class t5:
 
         return input_ids, attention_mask, labels
 
-    def train_model(self, model, input_ids, attention_mask, labels, optimizer, epochs = 1):
-        for epoch in tqdm(range(epochs)):
+    def train_model(self, input_ids, attention_mask, labels, optimizer, epochs = 1):
+        for _ in tqdm(range(epochs)):
             # forward pass
-            loss = model(input_ids=input_ids, attention_mask=attention_mask, labels=labels).loss
+            loss = self.model(input_ids=input_ids, attention_mask=attention_mask, labels=labels).loss
             loss.item()
 
             loss.backward()

@@ -15,7 +15,7 @@ def main():
     try:
         t5_model = t5("unicamp-dl/ptt5-base-portuguese-vocab")
         input_ids, attention_mask, labels = t5_model.encode_data_for_training_task(text_list, sumario_list)
-        t5_model.train_model(t5_model.model, input_ids, attention_mask, labels, torch.optim.Adam(t5_model.model.parameters(), lr=1e-4), epochs = 4)
+        t5_model.train_model(input_ids, attention_mask, labels, torch.optim.Adam(t5_model.model.parameters(), lr=1e-4), epochs = 4)
     except Exception as e:
         logging.info("Problem with t5 model training")
         raise CustomException(e, sys)

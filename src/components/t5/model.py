@@ -53,6 +53,7 @@ class t5:
 
     def save_model(self, model_name):
         self.model.save_pretrained(model_name)
+        self.tokenizer.save_pretrained(model_name)
 
     def generate_summaries(self, text_list, max_length = 1024):
         input_sequences = text_list

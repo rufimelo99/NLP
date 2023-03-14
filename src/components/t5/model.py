@@ -5,7 +5,7 @@ tqdm.pandas()
 class t5:
     def __init__(self, name) -> None:
         self.tokenizer = T5Tokenizer.from_pretrained(name)
-        self.model = T5ForConditionalGeneration.from_pretraWined(name)
+        self.model = T5ForConditionalGeneration.from_pretrained(name)
 
     def load_pre_trained_model(self, model_name) -> None:
         self.tokenizer = T5Tokenizer.from_pretrained(model_name)

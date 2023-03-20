@@ -18,7 +18,7 @@ class Rouge_Evaluator:
             scores.append(self.scorer.score(row[prediction_col], row[reference_col]))
         return scores
 
-    def get_mean_scores(self, scores):   
+    def get_mean_scores(self, scores):
         rouge_types=self.rouge_types
         mean_scores = {}
         for rouge_type in rouge_types:
